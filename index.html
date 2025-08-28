@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jurusan ALDP - SMKN 2 Kandangan</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f0f8f0;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(to right, #2e7d32, #4caf50);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            border-radius: 0 0 20px 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .logo {
+            width: 120px;
+            height: 120px;
+            background-color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 20px;
+            box-shadow: 0 0 0 5px rgba(255,255,255,0.3);
+        }
+        
+        .logo-text {
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+        
+        .content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .main-content {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+        
+        .sidebar {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+        
+        h2 {
+            color: #2e7d32;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #4caf50;
+        }
+        
+        h3 {
+            color: #388e3c;
+            margin: 25px 0 15px;
+        }
+        
+        .subject-category {
+            margin-bottom: 30px;
+        }
+        
+        .subject-list {
+            list-style-type: none;
+        }
+        
+        .subject-list li {
+            padding: 12px 15px;
+            margin-bottom: 10px;
+            background-color: #e8f5e9;
+            border-left: 4px solid #4caf50;
+            border-radius: 0 5px 5px 0;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+        
+        .subject-list li:hover {
+            transform: translateX(5px);
+            background-color: #c8e6c9;
+        }
+        
+        .info-box {
+            background-color: #e8f5e9;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+        }
+        
+        .info-box h3 {
+            margin-top: 0;
+            color: #2e7d32;
+        }
+        
+        .career-list {
+            list-style-type: none;
+        }
+        
+        .career-list li {
+            padding: 10px 0;
+            border-bottom: 1px dashed #a5d6a7;
+            display: flex;
+            align-items: center;
+        }
+        
+        .career-list li:before {
+            content: "🌿";
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .quote {
+            font-style: italic;
+            text-align: center;
+            margin: 30px 0;
+            padding: 20px;
+            background-color: #c8e6c9;
+            border-radius: 10px;
+            color: #1b5e20;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            background-color: #2e7d32;
+            color: white;
+            border-radius: 10px 10px 0 0;
+        }
+        
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin: 40px 0 20px;
+        }
+        
+        .pagination a {
+            display: inline-block;
+            padding: 12px 25px;
+            margin: 0 10px;
+            background-color: #4caf50;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: all 0.3s;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .pagination a:hover {
+            background-color: #2e7d32;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+        
+        .social-section {
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 40px;
+            background: linear-gradient(to right, #f0f8f0, #e8f5e9);
+            border: 2px solid #4caf50;
+        }
+        
+        .social-section h3 {
+            color: #2e7d32;
+            margin-bottom: 20px;
+        }
+        
+        .social-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .social-btn {
+            display: flex;
+            align-items: center;
+            padding: 12px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .social-btn i {
+            margin-right: 8px;
+            font-size: 1.2rem;
+        }
+        
+        .youtube-btn {
+            background: linear-gradient(to right, #ff0000, #cc0000);
+            color: white;
+        }
+        
+        .instagram-btn {
+            background: linear-gradient(to right, #833ab4, #fd1d1d, #fcb045);
+            color: white;
+        }
+        
+        .class-btn {
+            background: linear-gradient(to right, #3897f0, #4caf50);
+            color: white;
+        }
+        
+        .social-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+        
+        @media (max-width: 768px) {
+            .content {
+                grid-template-columns: 1fr;
+            }
+            
+            .logo-container {
+                flex-direction: column;
+            }
+            
+            .logo {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+            
+            .pagination {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .pagination a {
+                margin: 5px 0;
+                width: 200px;
+                text-align: center;
+            }
+            
+            .social-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .social-btn {
+                width: 250px;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo-container">
+                <div class="logo">
+                    <span style="font-size: 3rem; color: #2e7d32;">🌿</span>
+                </div>
+                <div class="logo-text">SMKN 2 KANDANGAN</div>
+            </div>
+            <h1>JURUSAN AGRIBISNIS LANSKAP DAN PERTAMANAN</h1>
+            <p class="subtitle">Menciptakan Profesional di Bidang Desain Lanskap dan Pertamanan</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="content">
+            <div class="main-content">
+                <h2>Mata Pelajaran Jurusan ALDP</h2>
+                <p>Jurusan Agribisnis Lanskap dan Pertamanan (ALDP) di SMKN 2 Kandangan menyediakan kurikulum komprehensif yang menggabungkan ilmu tanaman, desain, dan bisnis.</p>
+                
+                <div class="subject-category">
+                    <h3>1. Dasar-dasar Agribisnis</h3>
+                    <ul class="subject-list">
+                        <li>Pengantar Agribisnis</li>
+                        <li>Dasar-dasar Ekonomi Pertanian</li>
+                        <li>Manajemen Usaha Tani</li>
+                        <li>Kewirausahaan di Bidang Pertanian</li>
+                        <li>Pemasaran Hasil Pertanian</li>
+                    </ul>
+                </div>
+                
+                <div class="subject-category">
+                    <h3>2. Ilmu Tanaman dan Hortikultura</h3>
+                    <ul class="subject-list">
+                        <li>Dasar-dasar Ilmu Tanaman</li>
+                        <li>Botani dan Fisiologi Tanaman</li>
+                        <li>Pembibitan dan Perbanyakan Tanaman</li>
+                        <li>Ilmu Tanah dan Media Tanam</li>
+                        <li>Nutrisi dan Pemupukan Tanaman</li>
+                    </ul>
+                </div>
+                
+                <div class="subject-category">
+                    <h3>3. Desain Lanskap dan Pertamanan</h3>
+                    <ul class="subject-list">
+                        <li>Dasar-dasar Desain Lanskap</li>
+                        <li>Prinsip-prinsip Desain Taman</li>
+                        <li>Gambar Teknik dan Perspektif</li>
+                        <li>Penggunaan Software Desain (AutoCAD, SketchUp)</li>
+                        <li>Pemilihan Tanaman untuk Lanskap</li>
+                    </ul>
+                </div>
+                
+                <div class="subject-category">
+                    <h3>4. Teknik Konstruksi Lanskap</h3>
+                    <ul class="subject-list">
+                        <li>Konstruksi Hardscape (jalan setapak, kolam, dll.)</li>
+                        <li>Instalasi Irigasi dan Drainase</li>
+                        <li>Teknik Pembuatan Taman Vertikal</li>
+                        <li>Pembangunan Elemen Taman (gazebo, pergola, dll.)</li>
+                        <li>Material dan Estimasi Biaya</li>
+                    </ul>
+                </div>
+                
+                <div class="subject-category">
+                    <h3>5. Manajemen dan Perawatan Lanskap</h3>
+                    <ul class="subject-list">
+                        <li>Teknik Perawatan Tanaman</li>
+                        <li>Manajemen Hama dan Penyakit Tanaman</li>
+                        <li>Pemangkasan dan Perawatan Pohon</li>
+                        <li>Manajemen Proyek Lanskap</li>
+                        <li>Perawatan Taman Berkelanjutan</li>
+                    </ul>
+                </div>
+                
+                <div class="quote">
+                    "Membangun keindahan alam yang harmonis melalui ilmu lanskap dan pertamanan"
+                </div>
+            </div>
+            
+            <div class="sidebar">
+                <div class="info-box">
+                    <h3>Profil Jurusan ALDP</h3>
+                    <p>Jurusan Agribisnis Lanskap dan Pertamanan mempersiapkan siswa untuk menjadi technopreneur di bidang desain, konstruksi, dan perawatan lanskap.</p>
+                </div>
+                
+                <h3>Prospek Karir Lulusan</h3>
+                <ul class="career-list">
+                    <li>Desainer Lanskap</li>
+                    <li>Kontraktor Taman</li>
+                    <li>Pengusaha Nurseri</li>
+                    <li>Konsultan Pertamanan</li>
+                    <li>Teknisi Lanskap</li>
+                    <li>Pengawas Proyek Hijau</li>
+                    <li>Wirausaha di Bidang Tanaman Hias</li>
+                    <li>Pegawai Dinas Pertamanan</li>
+                </ul>
+                
+                <div class="info-box">
+                    <h3>Fasilitas Praktik</h3>
+                    <p>SMKN 2 Kandangan menyediakan berbagai fasilitas praktik untuk jurusan ALDP:</p>
+                    <ul class="subject-list">
+                        <li>Laboratorium Tanaman</li>
+                        <li>Kebun Percobaan</li>
+                        <li>Nurseri Pembibitan</li>
+                        <li>Studio Desain</li>
+                        <li>Area Praktik Lanskap</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="social-section">
+            <h3>Ikuti Kami di Media Sosial</h3>
+            <div class="social-buttons">
+                <a href="https://www.youtube.com/@smkn2kandangan374" class="social-btn youtube-btn" target="_blank">
+                    <i class="fab fa-youtube"></i> YouTube Sekolah
+                </a>
+                <a href="https://www.instagram.com/smkn2kandangan_official" class="social-btn instagram-btn" target="_blank">
+                    <i class="fab fa-instagram"></i> Instagram Sekolah
+                </a>
+                <a href="https://www.instagram.com/aldp.classx.stemada.25.26" class="social-btn class-btn" target="_blank">
+                    <i class="fab fa-instagram"></i> Instagram Kelas ALDP
+                </a>
+            </div>
+        </div>
+
+        <div class="pagination">
+            <a href="page2.html">Halaman Selanjutnya →</a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>© 2023 SMKN 2 Kandangan | Jurusan Agribisnis Lanskap dan Pertamanan</p>
+            <p>Jl. Pendidikan No. 12, Kandangan, Kalimantan Selatan</p>
+        </div>
+    </footer>
+</body>
+</html>
