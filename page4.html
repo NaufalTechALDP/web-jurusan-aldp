@@ -52,6 +52,13 @@
             align-items: center;
             margin-right: 20px;
             box-shadow: 0 0 0 5px rgba(255,255,255,0.3);
+            overflow: hidden;
+        }
+        
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
         
         .logo-text {
@@ -449,7 +456,7 @@
         <div class="container">
             <div class="logo-container">
                 <div class="logo">
-                    <span style="font-size: 3rem; color: #2e7d32;">🌿</span>
+                    <img src="foto title/Logo ALDP.png" alt="Logo ALDP SMKN 2 Kandangan">
                 </div>
                 <div class="logo-text">SMKN 2 KANDANGAN</div>
             </div>
@@ -505,7 +512,7 @@
                         </div>
                         <div class="video-content">
                             <h3>Lomba Lanskap Tingkat Provinsi</h3>
-                            <p>Documentasi persiapan dan penampilan siswa ALDP dalam Lomba Kompetensi Siswa bidang Landscape Gardening.</p>
+                            <p>Documentasi persiapan и penampilan siswa ALDP dalam Lomba Kompetensi Siswa bidang Landscape Gardening.</p>
                         </div>
                     </div>
                     
@@ -624,7 +631,6 @@
             document.getElementById('videoFrame').src = '';
         }
         
-        // Tutup modal ketika mengklik di luar area konten
         window.onclick = function(event) {
             const modal = document.getElementById('videoModal');
             if (event.target == modal) {
